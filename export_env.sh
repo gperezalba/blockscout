@@ -1,0 +1,15 @@
+export NETWORK=Mainnet
+export SUBNETWORK=PI Blockchain
+export LOGO=/images/piexplorer.png
+export LOGO_FOOTER=/images/piexplorer.png
+export LINK_TO_OTHER_EXPLORERS=false
+export DISABLE_EXCHANGE_RATES=true
+export SHOW_PRICE_CHART=false
+export SHOW_TXS_CHART=true
+export ENABLE_TXS_STATS=true
+export HISTORY_FETCH_INTERVAL=60
+export TXS_HISTORIAN_INIT_LAG=0
+export TXS_STATS_DAYS_TO_COMPILE_AT_INIT=365
+export CHAIN_ID=31416
+export ENABLE_SOURCIFY_INTEGRATION=true
+export SECRET_KEY_BASE=gYQ6lkjr5NhCFPjVVhsUh5sRtwJg267zaIRhyN/1v2dEqhCLklh0Qjr1qXTo1VjMy0jxJFTAJaUJI2HuBfbkrQ==
