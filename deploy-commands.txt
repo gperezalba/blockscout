@@ -37,4 +37,5 @@ export ENABLE_SOURCIFY_INTEGRATION=true
 - cd apps/explorer && npm install; cd -
 - mix phx.digest
 - cd apps/block_scout_web; mix phx.gen.cert blockscout blockscout.local; cd -
+- screen -S blockscout
 - mix phx.server
