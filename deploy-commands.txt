@@ -1,0 +1,40 @@
+- AWS Marketplace
+- arn:aws:acm:us-east-1:788533399536:certificate/0be3bd3e-a785-47af-90af-c73bd9d4aaff
+- http://18.192.148.106:8545
+- ws://18.192.148.106:8546
+- sudo systemctl stop explorer.service
+- wget http://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.3.4.9-1~centos~7_amd64.rpm
+- sudo yum install esl-erlang_22.3.4.9-1~centos~7_amd64.rpm
+(https://www.mvps.net/docs/how-to-install-rust-on-centos/)
+- sudo yum -y update
+- sudo yum -y install curl
+- curl https://sh.rustup.rs -sSf | sh
+- source $HOME/.cargo/env
+(https://github.com/inotify-tools/inotify-tools/wiki)
+- sudo yum install -y epel-release && sudo yum update
+- sudo yum install inotify-tools
+- sudo yum --enablerepo=epel install inotify-tools
+- sudo git clone https://github.com/gperezalba/blockscout.git
+- sudo chown ec2-user -R blockscout/
+(https://docs.blockscout.com/for-developers/manual-deployment)
+export NETWORK=Mainnet
+export SUBNETWORK=PI Blockchain
+export LOGO=/images/piexplorer.png
+export LOGO_FOOTER=/images/piexplorer.png
+export LINK_TO_OTHER_EXPLORERS=false
+export DISABLE_EXCHANGE_RATES=true
+export SHOW_PRICE_CHART=false
+export SHOW_TXS_CHART=true
+export ENABLE_TXS_STATS=true
+export HISTORY_FETCH_INTERVAL=60
+export TXS_HISTORIAN_INIT_LAG=0
+export TXS_STATS_DAYS_TO_COMPILE_AT_INIT=365
+export CHAIN_ID=31416
+export ENABLE_SOURCIFY_INTEGRATION=true
+- mix do deps.get, local.rebar --force, deps.compile, compile
+- mix do ecto.create, ecto.migrate
+- cd apps/block_scout_web/assets; npm install && node_modules/webpack/bin/webpack.js --mode production; cd -
+- cd apps/explorer && npm install; cd -
+- mix phx.digest
+- cd apps/block_scout_web; mix phx.gen.cert blockscout blockscout.local; cd -
+- mix phx.server
